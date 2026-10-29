@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <style>
-    .bg { fill: #000; } .fg { fill: #fff; }
-    @media (prefers-color-scheme: dark) { .bg { fill: #fff; } .fg { fill: #000; } }
-  </style>
-  <rect class="bg" width="64" height="64" rx="14"/>
-  <text class="fg" x="31" y="45" text-anchor="middle" font-family="Bahnschrift, 'Arial Narrow', Arial, sans-serif" font-stretch="condensed" font-weight="700" font-size="33" letter-spacing="-1">SA</text>
-  <circle cx="52" cy="12" r="5" fill="#fff100"/>
-</svg>
