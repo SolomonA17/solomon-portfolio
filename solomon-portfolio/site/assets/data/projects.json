@@ -1,0 +1,396 @@
+{
+  "profile": {
+    "login": "SolomonA17",
+    "url": "https://github.com/SolomonA17",
+    "reposUrl": "https://github.com/SolomonA17?tab=repositories"
+  },
+  "snapshot": {
+    "date": "2026-10-25",
+    "publicRepos": 64,
+    "forks": 2,
+    "lastPush": "2026-08-28",
+    "languages": { "TypeScript": 26, "Python": 8, "JavaScript": 7, "HTML": 6, "C": 5 }
+  },
+  "selectionNote": "12 of 64 public repositories, chosen by reading the code. Left out: 2 forks, a repo where most commits are by other people, a duplicate build, setup and practice repos, tests, AI-builder scaffolds and an earlier portfolio.",
+  "categories": [
+    { "id": "fullstack", "label": "Full-stack" },
+    { "id": "frontend", "label": "Front-end" },
+    { "id": "api", "label": "APIs" },
+    { "id": "seo", "label": "SEO" },
+    { "id": "3d", "label": "3D / WebGL" },
+    { "id": "systems", "label": "Systems & algorithms" }
+  ],
+  "projects": [
+    {
+      "slug": "rideflow",
+      "repo": "RideFlow_Seo",
+      "name": "RideFlow",
+      "featured": true,
+      "rank": 1,
+      "origin": "product",
+      "originLabel": "Product build",
+      "tagline": "Car-rental platform with role-based auth, an admin console and crypto checkout flows.",
+      "summary": "A Next.js 16 App Router build with NextAuth v5 sessions, middleware-protected admin and customer areas, a filterable fleet catalogue and an SEO layer: dynamic sitemap, robots rules and noindexed dashboards.",
+      "categories": ["fullstack", "seo", "frontend"],
+      "stack": ["Next.js 16", "React 19", "TypeScript", "NextAuth v5", "Tailwind CSS v4", "Lucide"],
+      "language": "TypeScript",
+      "commits": 12,
+      "pushedAt": "2026-06-04",
+      "demo": "https://ride-flow-seo.vercel.app",
+      "related": { "label": "SEO case study", "href": "#case-rideflow" },
+      "image": { "src": "assets/img/projects/rideflow.jpg", "width": 800, "height": 500, "kind": "screenshot", "alt": "RideFlow homepage: luxury car hero with a vehicle search panel for location and pickup and return dates" },
+      "problem": "Renting a premium car online should take minutes, while staff need one place to run the fleet, reservations, content and payments, and private areas must stay out of search results.",
+      "features": [
+        "Public fleet catalogue filtered by vehicle type, premium, seats, bags and transmission, with best-price and flexible rates.",
+        "Checkout with a crypto payment step (USDC, BTC, ETH, SOL). Wallet connection and conversion rates are simulated in this build.",
+        "Customer dashboard with bookings, account details and wallet tabs.",
+        "Admin console: fleet metrics, vehicle create and edit, blog publisher, crypto clearing and reservations.",
+        "Sign-up API route that validates input and answers 400, 409 or 201."
+      ],
+      "engineering": [
+        "Role-based access in middleware: /admin/* requires the admin role, /dashboard requires a session, otherwise the user is redirected to /login.",
+        "NextAuth JWT and session callbacks carry the user’s role into the session.",
+        "Feature-sliced structure (admin, dashboard, fleet-catalog, home, blog), each with its own components, hooks, services and types; services are mocks ready to swap for a real API.",
+        "SEO built in: sitemap.ts revalidates hourly and adds vehicle and blog routes, robots.ts disallows private paths, dashboards export noindex metadata, and the root layout ships AutoRental / LocalBusiness JSON-LD."
+      ],
+      "contribution": "Sole committer on this repository (12 commits). The SEO workstream behind it is covered in the RideFlow case study under Selected work.",
+      "skills": "nextjs react typescript tailwind nextauth crawl metadata schema components rest"
+    },
+    {
+      "slug": "solarvue",
+      "repo": "SolarVue",
+      "name": "SolarVue",
+      "featured": true,
+      "rank": 2,
+      "origin": "personal",
+      "originLabel": "Personal project",
+      "tagline": "An interactive 3D solar system built with Three.js.",
+      "summary": "A React and Three.js scene with textured planets on animated orbits, a simulation-speed slider, a camera that follows any planet you pick, and live planet data from the Solar System OpenData API.",
+      "categories": ["3d", "frontend", "api"],
+      "stack": ["React 18", "Three.js", "OrbitControls", "JavaScript", "REST API", "Bootstrap 5"],
+      "language": "JavaScript",
+      "commits": 19,
+      "pushedAt": "2024-09-17",
+      "demo": null,
+      "image": { "src": "assets/img/projects/solarvue.png", "width": 1200, "height": 750, "kind": "illustration", "alt": "Illustration of SolarVue’s 3D scene: the sun ringed by nine orbit paths and planets, under the app’s planet buttons and speed slider" },
+      "problem": "Planet facts are easier to grasp when you can see scale and motion, not just read a table.",
+      "features": [
+        "The sun, eight planets and Pluto as textured spheres, with orbit-path rings and Saturn’s ring.",
+        "Planets orbit and spin at relative rates, and a slider changes the simulation speed.",
+        "Clicking a planet locks the camera onto it as it moves; Free Look brings back drag, zoom and pan.",
+        "Each selection fetches live data from api.le-systeme-solaire.net: body type, moons, density, gravity, escape speed, radius, orbit and rotation periods, and temperature."
+      ],
+      "engineering": [
+        "Orbits are computed every frame from sine and cosine of a time factor, so speed changes apply instantly.",
+        "Camera follow reads each mesh’s world position plus a per-planet offset on every frame.",
+        "OrbitControls panning is clamped to a bounding box so the view can’t drift out of the scene."
+      ],
+      "contribution": "Sole author (19 commits).",
+      "skills": "react javascript threejs rest"
+    },
+    {
+      "slug": "cinediscover",
+      "repo": "CINEDiscover-Movie-Recommendation-Web-App",
+      "name": "CineDiscover",
+      "featured": true,
+      "rank": 3,
+      "origin": "personal",
+      "originLabel": "Personal project",
+      "tagline": "Movie discovery and recommendations on the TMDB API.",
+      "summary": "A Next.js App Router app with trending and popular feeds, search, server-rendered movie pages with recommendations and per-movie metadata, and favourites saved in the browser.",
+      "categories": ["frontend", "api", "seo"],
+      "stack": ["Next.js 13", "React 18", "TypeScript", "Tailwind CSS", "shadcn/ui", "TMDB API"],
+      "language": "TypeScript",
+      "commits": 25,
+      "pushedAt": "2025-09-23",
+      "demo": "https://cine-discover-movie-recommendation.vercel.app",
+      "image": { "src": "assets/img/projects/cinediscover.jpg", "width": 800, "height": 500, "kind": "screenshot", "alt": "CineDiscover home: a featured film hero with rating, Watch Now and More Info buttons, a search bar and Trending This Week" },
+      "problem": "Choosing something to watch means jumping between trending lists, search and detail pages. CineDiscover keeps them in one fast flow.",
+      "features": [
+        "Weekly trending and popular movie feeds from TMDB.",
+        "Search by title.",
+        "Dynamic /movies/[id] pages with full details and recommendations.",
+        "A favourites page backed by localStorage.",
+        "Loading skeletons, an error component and a custom 404."
+      ],
+      "engineering": [
+        "Movie pages are async Server Components that fetch details and recommendations in parallel with Promise.all.",
+        "generateMetadata gives every movie its own title and description, with a not-found fallback.",
+        "A typed API layer (lib/api.ts, lib/types.ts) wraps the TMDB endpoints so UI components stay presentational.",
+        "A useFavorites hook handles load, save and toggle with guarded localStorage access."
+      ],
+      "contribution": "Sole committer (25 commits).",
+      "skills": "nextjs react typescript tailwind rest metadata components"
+    },
+    {
+      "slug": "heleph",
+      "repo": "HelephHomePage",
+      "name": "Heleph Coffee homepage",
+      "featured": true,
+      "rank": 4,
+      "origin": "client",
+      "originLabel": "Client work",
+      "tagline": "A story-led homepage for a specialty coffee exporter.",
+      "summary": "A hand-coded single-page homepage, with sections on processing, single-origin coffees, zero waste, traceability, people and sustainability, and scroll-reveal motion that respects reduced-motion settings.",
+      "categories": ["frontend"],
+      "stack": ["HTML5", "CSS3", "JavaScript", "IntersectionObserver", "Responsive design"],
+      "language": "HTML",
+      "commits": null,
+      "pushedAt": "2026-08-28",
+      "demo": "https://heleph-home-page.vercel.app",
+      "related": { "label": "Heleph case study", "href": "#case-heleph" },
+      "image": { "src": "assets/img/projects/heleph.jpg", "width": 800, "height": 500, "kind": "screenshot", "alt": "Heleph Coffee homepage hero: the headline Discover the Magic on a teal gradient, with Discover the Magic and Explore Our Coffee buttons" },
+      "problem": "The exporter’s story of origin, processing, traceability and people needed a homepage that sells the coffee, not just lists it.",
+      "features": [
+        "Hero, values and a seven-part “magic” narrative from processing to sustainability.",
+        "A single-origin coffee collection and traceability section.",
+        "Partner and project sections with a closing promise and call to action."
+      ],
+      "engineering": [
+        "One self-contained index.html (about 49 KB) using images from the company’s WordPress media library.",
+        "Sections reveal on scroll with IntersectionObserver, and a prefers-reduced-motion rule turns the transitions off.",
+        "Responsive breakpoints at 900, 767 and 640 px."
+      ],
+      "contribution": "Related to the modernised homepage I built in my role as SEO Specialist at Heleph Coffee Group.",
+      "skills": "html css javascript responsive"
+    },
+    {
+      "slug": "forecastify",
+      "repo": "Forecastify",
+      "name": "Forecastify",
+      "featured": true,
+      "rank": 5,
+      "origin": "personal",
+      "originLabel": "Personal project",
+      "tagline": "Location-based weather in plain JavaScript.",
+      "summary": "A framework-free weather app: it reads the browser’s location, calls the OpenWeatherMap One Call API and renders current conditions and a multi-day forecast beneath a live clock.",
+      "categories": ["frontend", "api"],
+      "stack": ["JavaScript (ES6)", "HTML5", "CSS3", "Geolocation API", "OpenWeatherMap API", "Moment.js"],
+      "language": "JavaScript",
+      "commits": 14,
+      "pushedAt": "2024-06-11",
+      "demo": "https://forecastify-azure.vercel.app",
+      "writeup": "https://www.linkedin.com/pulse/forecastify-personalized-weather-web-app-solomon-aberra-yzoqf/",
+      "image": { "src": "assets/img/projects/forecastify.jpg", "width": 800, "height": 500, "kind": "screenshot", "alt": "Forecastify: a large clock and date over a mountain photo, above a row of daily forecast cards with night and day temperatures" },
+      "problem": "Plans change with the weather. Forecastify gives a quick, location-aware read of today and the days ahead.",
+      "features": [
+        "A live clock and date that update every second.",
+        "Current humidity, pressure, wind speed, sunrise and sunset.",
+        "Daily forecast cards with weather icons and night and day temperatures.",
+        "The location’s time zone, taken from the API response."
+      ],
+      "engineering": [
+        "No framework: the DOM is rendered with template literals.",
+        "Geolocation coordinates go straight to the One Call endpoint in metric units, with hourly and minutely data excluded to keep the payload small."
+      ],
+      "contribution": "Sole author (14 commits), plus a write-up on LinkedIn.",
+      "skills": "javascript html css rest"
+    },
+    {
+      "slug": "alx-listing-app",
+      "repo": "alx-listing-app-deployed",
+      "name": "ALX Listing App",
+      "featured": false,
+      "rank": 6,
+      "origin": "program",
+      "originLabel": "ALX ProDev coursework",
+      "tagline": "Property listings and booking UI with Next.js API routes.",
+      "summary": "Airbnb-style listings with category tabs and filters, property detail pages with reviews, a booking page with an order summary, and API routes that serve property data.",
+      "categories": ["fullstack", "frontend"],
+      "stack": ["Next.js 15", "React 19", "TypeScript", "Tailwind CSS v4", "Axios"],
+      "language": "TypeScript",
+      "commits": null,
+      "pushedAt": "2025-09-06",
+      "demo": "https://alx-listing-app-deployed-rho-steel.vercel.app",
+      "image": { "src": "assets/img/projects/alx-listing-app.jpg", "width": 800, "height": 500, "kind": "screenshot", "alt": "ALX Listing App home: search bar, category tabs and a lakeside cabin hero reading Find your favorite place here" },
+      "problem": "A listings site needs fast browsing, clear detail pages and a booking step, all fed by one data source.",
+      "features": [
+        "Home page with category tabs and filters.",
+        "Dynamic property pages with reviews.",
+        "Booking page with a contact and payment form, order summary and cancellation policy."
+      ],
+      "engineering": [
+        "pages/api/properties/[id] returns 200 with the property or 404 with a message; reviews have their own route.",
+        "Shared TypeScript interfaces, plus reusable Card, Button and Pill components inside a common Layout."
+      ],
+      "contribution": "Built to the ALX ProDev Frontend program brief.",
+      "skills": "nextjs react typescript tailwind rest components"
+    },
+    {
+      "slug": "cineseek-pwa",
+      "repo": "alx-pwa-0x01",
+      "name": "CineSeek (PWA)",
+      "featured": false,
+      "rank": 7,
+      "origin": "program",
+      "originLabel": "ALX ProDev coursework",
+      "tagline": "An installable movie browser with a server-side API proxy.",
+      "summary": "A Next.js progressive web app with a service worker generated by next-pwa, a web manifest and icons, and a POST-only API route that queries the MoviesDatabase API with a key that never reaches the browser.",
+      "categories": ["fullstack", "api"],
+      "stack": ["Next.js 15", "React 19", "TypeScript", "next-pwa", "Tailwind CSS v4", "RapidAPI"],
+      "language": "TypeScript",
+      "commits": null,
+      "pushedAt": "2025-08-20",
+      "demo": "https://alx-pwa-0x01-ten-gilt.vercel.app",
+      "image": { "src": "assets/img/projects/cineseek-pwa.jpg", "width": 800, "height": 500, "kind": "screenshot", "alt": "CineSeek home: dark hero reading Discover Your Next Favorite Movie with a Browse Movies button" },
+      "problem": "A movie browser should install like an app and keep its API key off the client.",
+      "features": [
+        "Service worker and manifest via @ducanh2912/next-pwa.",
+        "Movie listing by year, page and genre."
+      ],
+      "engineering": [
+        "The client POSTs year, page and genre to /api/fetch-movies, which adds the RapidAPI headers from an environment variable.",
+        "Requests other than POST get 405 with an Allow header."
+      ],
+      "contribution": "Built to the ALX ProDev Frontend program brief.",
+      "skills": "nextjs react typescript pwa rest"
+    },
+    {
+      "slug": "little-lemon",
+      "repo": "Meta-Frontend-Developer-Capstone-little-lemonade-booking-project",
+      "name": "Little Lemon booking",
+      "featured": false,
+      "rank": 8,
+      "origin": "course",
+      "originLabel": "Meta course capstone",
+      "tagline": "React table-booking flow from Meta’s Front-End capstone.",
+      "summary": "A restaurant site in React with a reservation form (date, time, guests, occasion), available times updated through a reducer when the date changes, and React Testing Library tests.",
+      "categories": ["frontend"],
+      "stack": ["React 18", "React Router 6", "React Testing Library", "JavaScript", "SweetAlert2"],
+      "language": "JavaScript",
+      "commits": null,
+      "pushedAt": "2024-03-16",
+      "demo": null,
+      "image": { "src": "assets/img/projects/little-lemon.jpg", "width": 1200, "height": 750, "kind": "repo", "alt": "Little Lemon restaurant homepage with a Reserve Table button and a row of weekly specials" },
+      "problem": "The capstone brief: let diners reserve a table with valid inputs and clear feedback.",
+      "features": [
+        "Booking form with required date, time, guest (1–10) and occasion fields.",
+        "Available times dispatched to a reducer whenever the date changes.",
+        "Tests that render the app and open the booking form."
+      ],
+      "engineering": [
+        "Controlled inputs with useState and labelled fields.",
+        "Routing with React Router 6; as the README notes, reserving a table is the only live feature."
+      ],
+      "contribution": "Capstone for the Meta Front-End Developer Professional Certificate.",
+      "skills": "react javascript router jest rtl"
+    },
+    {
+      "slug": "monty",
+      "repo": "monty",
+      "name": "Monty interpreter",
+      "featured": false,
+      "rank": 9,
+      "origin": "program",
+      "originLabel": "ALX SE curriculum",
+      "tagline": "A stack and queue interpreter for Monty bytecode, written in C.",
+      "summary": "Reads a Monty bytecode file line by line and dispatches 15 opcodes (push, pall, pint, pop, swap, add, sub, div, mul, mod, nop, pchar, pstr, rotl, rotr) over a doubly linked list.",
+      "categories": ["systems"],
+      "stack": ["C (gnu89)", "Doubly linked lists", "Function pointers"],
+      "language": "C",
+      "commits": 1,
+      "pushedAt": "2023-12-14",
+      "demo": null,
+      "image": { "src": "assets/img/projects/monty.png", "width": 1200, "height": 750, "kind": "code", "alt": "Code preview: the stack_t and instruction_t structs from monty.h beside the 15 supported opcodes" },
+      "problem": "Interpret a small stack-based bytecode language with clear errors for bad files, unknown instructions and invalid operations.",
+      "features": [
+        "15 opcodes covering stack manipulation, arithmetic and string output.",
+        "Brainf*ck exercises in the bf/ folder."
+      ],
+      "engineering": [
+        "An instruction_t table maps each opcode string to its handler through a function pointer.",
+        "Variadic error helpers (err, string_err, more_err) keep error codes and messages in one place."
+      ],
+      "contribution": "ALX Software Engineering curriculum project.",
+      "skills": "c"
+    },
+    {
+      "slug": "sorting-algorithms",
+      "repo": "sorting_algorithms",
+      "name": "Sorting algorithms",
+      "featured": false,
+      "rank": 10,
+      "origin": "program",
+      "originLabel": "ALX SE curriculum",
+      "tagline": "Thirteen sorting routines in C, with Big-O notes for each.",
+      "summary": "Bubble, insertion (on a linked list), selection, quick sort and Hoare quick sort, shell, cocktail, counting, merge, heap, radix and bitonic sort, plus a deck-of-cards sort, with best, average and worst-case complexity files.",
+      "categories": ["systems"],
+      "stack": ["C (gnu89)", "Arrays", "Linked lists", "Big-O analysis"],
+      "language": "C",
+      "commits": 6,
+      "pushedAt": "2024-01-23",
+      "demo": null,
+      "image": { "src": "assets/img/projects/sorting-algorithms.png", "width": 1200, "height": 750, "kind": "code", "alt": "Code preview: a table of the repository’s sorting functions with best, average and worst-case Big-O, beside illustrative bars" },
+      "problem": "Implement and compare classic sorting algorithms, and state their time complexity.",
+      "features": [
+        "Twelve array and linked-list sorts plus a deck-of-cards sort.",
+        "A complexity file per algorithm, e.g. merge sort O(nlog(n)) in every case and counting sort O(n+k)."
+      ],
+      "engineering": [
+        "Insertion and cocktail sort work directly on a listint_t linked list; the rest sort int arrays in place.",
+        "Each algorithm’s best, average and worst case is recorded in its own complexity file."
+      ],
+      "contribution": "ALX Software Engineering curriculum project.",
+      "skills": "c"
+    },
+    {
+      "slug": "binary-trees",
+      "repo": "binary_trees",
+      "name": "Binary trees",
+      "featured": false,
+      "rank": 11,
+      "origin": "program",
+      "originLabel": "ALX SE curriculum",
+      "tagline": "Binary trees, BSTs and AVL trees in C.",
+      "summary": "Traversals, measurements, structural checks, rotations, BST insert, search and remove, and self-balancing AVL insert and remove, all built on one binary_tree_t node type.",
+      "categories": ["systems"],
+      "stack": ["C (gnu89)", "BST", "AVL", "Recursion"],
+      "language": "C",
+      "commits": 15,
+      "pushedAt": "2024-02-29",
+      "demo": null,
+      "image": { "src": "assets/img/projects/binary-trees.png", "width": 1200, "height": 750, "kind": "code", "alt": "Code preview: function groups from binary_trees.h beside an illustrated balanced binary search tree" },
+      "problem": "Build the core tree data structures from scratch and keep them balanced.",
+      "features": [
+        "Pre-, in-, post- and level-order traversals.",
+        "Height, depth, size, leaves, balance, and full, perfect, complete, BST and AVL checks.",
+        "Left and right rotations, AVL insert and remove, and sorted-array-to-AVL."
+      ],
+      "engineering": [
+        "One binary_tree_t node type, with bst_t and avl_t used for the BST and AVL APIs.",
+        "array_to_avl and sorted_array_to_avl build balanced trees straight from arrays."
+      ],
+      "contribution": "ALX Software Engineering curriculum project (15 commits).",
+      "skills": "c"
+    },
+    {
+      "slug": "alx-interview",
+      "repo": "alx-interview",
+      "name": "Interview problems",
+      "featured": false,
+      "rank": 12,
+      "origin": "program",
+      "originLabel": "ALX SE curriculum",
+      "tagline": "Algorithm exercises in Python, plus one in Node.js.",
+      "summary": "Pascal’s triangle, lockboxes, minimum operations, log parsing, UTF-8 validation, N-Queens backtracking, rotating a 2D matrix, making change, island perimeter and the prime game, plus a Star Wars API script in JavaScript.",
+      "categories": ["systems"],
+      "stack": ["Python 3", "JavaScript (Node.js)", "Backtracking", "Dynamic programming"],
+      "language": "Python",
+      "commits": null,
+      "pushedAt": "2024-09-04",
+      "demo": null,
+      "image": { "src": "assets/img/projects/alx-interview.png", "width": 1200, "height": 750, "kind": "code", "alt": "Code preview: the N-Queens backtracking functions from the repository beside a solved 4 by 4 board" },
+      "problem": "Practise the kinds of problems technical interviews ask, under time limits.",
+      "features": [
+        "Ten Python exercises and one JavaScript exercise, each in its own folder.",
+        "N-Queens prints every solution for a board of size N, minimum 4."
+      ],
+      "engineering": [
+        "N-Queens uses recursive backtracking with a diagonal-safety check.",
+        "Input validation with clear usage errors and exit codes."
+      ],
+      "contribution": "ALX Software Engineering curriculum project.",
+      "skills": "python javascript"
+    }
+  ]
+}
